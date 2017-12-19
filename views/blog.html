@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="cn">
+<% include header.html%>
+<body id="body" data-spy="scroll" data-target=".header">
+<% include navigation.html%>
+<div class="col-sm-9">
+<% for (var i=0;i< articleList.length;i++) { %>
+
+<div class="span4 panel panel-default">
+    <div class="panel-body">
+        <div class="col-sm-2">
+            <img src="<%=articleList[i].tag.logo %>" style="width: 200px;height: 150px;">
+        </div>
+        <div class="col-sm-10">
+            <h2>《<%=articleList[i].title%>》</h2>
+            <br>
+            <p>&nbsp;&nbsp;<%=articleList[i].brief%></p>
+            <br>
+            <p>&nbsp;&nbsp;<a class="btn btn-primary btn-large" href="/<%=articleList[i].id%>.html">查看详情 &raquo;</a></p>
+            <p class="pull-right col-md-9">
+                <span class="col-md-4">发表:<%=articleList[i].pubtime%></span>
+                <span class="col-md-3">浏览数(<%=articleList[i].hits%>)</span>
+                <span class="col-md-2">点赞(<%=articleList[i].good%>)</span>
+            </p>
+        </div>
+    </div>
+</div><!--/span-->
+
+<% } %>
+</div>
+<div class="col-sm-3">
+
+    <% include right.html %>
+
+</div>
+<% include footer.html%>
+</body>
+</html>
