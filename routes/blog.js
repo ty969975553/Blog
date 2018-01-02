@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
-var user = require('../services/User');
+var user = require('../services/UserService');
 var moment = require('moment');
-var tags = require('../services/Tags');
-var article = require('../services/Article');
+var tags = require('../services/TagsService');
+var article = require('../services/ArticleService');
 
 // router.get('/', function(req, res, next) {
 //     res.render('blog', { title: '博客' });
@@ -20,7 +20,7 @@ router.get('/blog', function(req, res, next) {
         //获取文章列表
         article.articleList(pageSizes,pageNow,function(err,articleList){
             //时间格式处理
-            for (var i = 0;i<articleList.length ;i++)
+            for (var i = 0; i < articleList.length ;i++)
             {
                 articleList[i].pubtime = moment(articleList[i].pubtime).format('YYYY-MM-DD HH:mm:ss');
             }

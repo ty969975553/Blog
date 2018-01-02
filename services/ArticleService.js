@@ -19,14 +19,14 @@ exports.addArticle = function(title,content,brief,tagid,callback){
     });
 };
 //文章列表
-exports.articleList = function(pageSize,pageNow,callback){
+exports.articleList = function(pageSize, pageNow, callback){
 
     //计算偏移量
     var offset = pageSize * (pageNow - 1);
 
-    Article.find().limit(pageSize).offset(offset).order('-pubtime').all(function(err,articles){
+    Article.find().limit(pageSize).offset(offset).order('-pubtime').all(function(err, articles){
 
-        return callback(err,articles);
+        return callback(err, articles);
     });
 };
 //文章列表

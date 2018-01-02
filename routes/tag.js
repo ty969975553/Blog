@@ -3,7 +3,7 @@
  */
 var express = require('express');
 var router = express.Router();
-var tags = require('../services/Tags');
+var tags = require('../services/TagsService');
 var moment = require('moment');
 //分类列表
 router.get('/tags', function(req, res, next) {
@@ -14,7 +14,7 @@ router.get('/tags', function(req, res, next) {
 
             return next(err);
         }
-        for (var i = 0;i<tags.length ;i++)
+        for (var i = 0;i < tags.length ;i++)
         {
             tags[i].created_at = moment(tags[i].created_at).format('YYYY-MM-DD HH:mm:ss');
         }

@@ -13,9 +13,3 @@ var conn = orm.connect(uri,function (err, db) {
 
 });
 module.exports = conn;
-
-
-
-
-
-

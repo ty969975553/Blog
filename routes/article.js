@@ -2,18 +2,17 @@
 var express = require('express');
 var router = express.Router();
 var moment = require('moment');
-var tags = require('../services/Tags');
-var article = require('../services/Article');
+var tags = require('../services/TagsService');
+var article = require('../services/ArticleService');
+
 //添加文章
 router.get('/add',function(req, res, next){
 
     tags.getTagsList(function(err,tags){
-
         res.render('admin/backend/article/addarticle',{tagList : tags,path : '/article/add',open:'article'});
     });
-
-
 });
+
 //添加文章处理
 router.post('/addarticle',function(req, res, next){
 

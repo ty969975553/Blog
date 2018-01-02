@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
+<head lang="cn">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>博客后台系统</title>
-    <link href="js/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="js/lib/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" media="screen">
+    <link href="/js/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="/js/lib/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" media="screen">
     <script src="/js/lib/jquery.min.js"></script>
-    <script src="js/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="/plugins/layer/layer.js" ></script>
     <script type="text/javascript" src="/JMEditor/scripts/markdown-it.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/JMEditor/scripts/highlightjs/styles/default.css">
@@ -72,7 +72,7 @@
         <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    admin <b class="caret"></b>
+                    <%=locals.user.username%> <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
                     <li><a href="#">退出</a></li>

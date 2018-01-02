@@ -13,5 +13,10 @@ exports.getUserInfo = function(name,callback){
     {
         return callback(null,[]);
     }
-    User.find({username :name },callback);
+    User.find({username : name },callback);
 };
+
+exports.checkUser = function (name, password, callback) {
+
+    User.exists({username : name ,password : password }, callback);
+}

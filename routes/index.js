@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
-var user = require('../services/User');
+var user = require('../services/UserService');
 var moment = require('moment');
-var tags = require('../services/Tags');
-var article = require('../services/Article');
+var tags = require('../services/TagsService');
+var article = require('../services/ArticleService');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

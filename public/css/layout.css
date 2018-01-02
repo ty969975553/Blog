@@ -660,10 +660,6 @@ fieldset[disabled] .btn-theme {
   display: block;
 }
 
-.header .nav-item:last-child .nav-item-child {
-  padding-right: 0;
-}
-
 .header .nav-item.active .nav-item-hover:after {
   opacity: 1;
   transition-duration: 400ms;
