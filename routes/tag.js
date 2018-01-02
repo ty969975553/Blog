@@ -19,14 +19,14 @@ router.get('/tags', function(req, res, next) {
             tags[i].created_at = moment(tags[i].created_at).format('YYYY-MM-DD HH:mm:ss');
         }
 
-        res.render('admin/backend/tags/index',{tagList : tags,path : '/tag/tags',open:'tag'});
+        res.render('admin/tags/index',{tagList : tags,path : '/tag/tags',open:'tag'});
     });
 });
 //添加分类界面
 router.get('/addtag',function(req,res,next){
 
 
-    res.render('admin/backend/tags/addtag',{path : '/tag/addtag',open:'tag'});
+    res.render('admin/tags/addtag',{path : '/tag/addtag',open:'tag'});
 
 });
 //添加分类处理

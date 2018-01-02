@@ -10,7 +10,6 @@ const flash = require('connect-flash')
 // const MongoStore = require('connect-mongo')(session)
 
 var index = require('./routes/index');
-var users = require('./routes/users');
 var admin = require('./routes/admin');
 var blog = require('./routes/blog');
 var tag = require('./routes/tag');
@@ -51,7 +50,7 @@ app.use(session({
 // flash 中间件，用来显示通知
 app.use(flash())
 
-app.use(['/article', '/tag'], function(req, res, next)
+app.use(['/article','/tag','/admin/index'], function(req, res, next)
 {
     if (req.session.user) {
         res.locals.user = req.session.user;
@@ -64,7 +63,6 @@ app.use(['/article', '/tag'], function(req, res, next)
 
 app.use('/', index);
 app.use('/', blog);
-app.use('/users', users);
 app.use('/admin', admin);
 app.use('/tag', tag);
 app.use('/article', article);

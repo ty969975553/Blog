@@ -9,7 +9,7 @@ var article = require('../services/ArticleService');
 router.get('/add',function(req, res, next){
 
     tags.getTagsList(function(err,tags){
-        res.render('admin/backend/article/addarticle',{tagList : tags,path : '/article/add',open:'article'});
+        res.render('admin/article/addarticle',{tagList : tags,path : '/article/add',open:'article'});
     });
 });
 
@@ -52,7 +52,7 @@ router.get('/articles',function(req, res, next){
             //计算总页数
             var totalPage = parseInt((count + pageSizes -1) / pageSizes);
 
-            res.render('admin/backend/article/index',{
+            res.render('admin/article/index',{
                                                         articleList : articleList,
                                                         totalCount: count,
                                                         totalPage : totalPage,
@@ -89,7 +89,7 @@ router.get('/updateArticle',function(req, res, next){
 
                 return next(err);
             }
-            res.render('admin/backend/article/update',{tagList : tags,article:article[0],path : '/article/articles',open:'article'});
+            res.render('admin/article/update',{tagList : tags,article:article[0],path : '/article/articles',open:'article'});
         });
     });
 });
